@@ -1,0 +1,89 @@
+
+.template_block_button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.template_form {
+    display: none;
+    margin-top: 49px;
+    background-color: white;
+    padding: 15px;
+}
+
+.template_form_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.template_form_header .template_form_name {
+    margin: 0;
+    font-weight: 600;
+}
+
+.template_form_close {
+    width: 1em;
+    height: 1em;
+    background-color: lightslategray;
+    cursor: pointer;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+  }
+
+.template_form_label{
+    display: block;
+    margin: 0;
+    font-size: 15px;
+}
+
+input, select {
+    width: 98%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 0;
+    background-color: #f3f6f9;
+    border-radius: 3px;
+}
+
+.template_form_create {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.template_form_change {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-control-dropdown {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 0;
+    background-color: #f3f6f9;
+    border-radius: 3px;
+}
+
+
+button {
+    padding: 10px 25px;
+    background-color: blue;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.template_form_change .btn1 {
+    background-color: #f44682;
+}
+
+.alert-danger {
+    margin: 0 0 10px;
+    color: red;
+    font-size: 12px;
+}

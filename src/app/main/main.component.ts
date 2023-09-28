@@ -3,6 +3,7 @@ import {Component, OnInit, ViewChild, Input} from '@angular/core';
 import {TitleService} from '.././service/http.service';
 import {DataTitles} from '.././interface/data';
 import { FormChildComponent } from ".././form-child/form-child.component";
+import { FormChangeChildComponent } from ".././form-change-child/form-change-child.component";
 
 
 @Component({
@@ -15,11 +16,11 @@ export class  MainComponent implements OnInit {
 
   titles: DataTitles[] = [];
 
-  titlesForm: object = {'usernameInput': '', 'firstnameInput': '', 'lastnameInput': '', 'emailInput': '', 'typeInput': ''};
+  surname: string = "aaaa";
 
-  surname: string = "";
 
   @ViewChild(FormChildComponent, {static: false}) private FormChild: FormChildComponent|undefined;
+  @ViewChild(FormChangeChildComponent, {static: false}) private FormChangeChild: FormChangeChildComponent|undefined;
 
   
   constructor(private httpService: TitleService) {}
@@ -39,7 +40,7 @@ export class  MainComponent implements OnInit {
 
 
   callPerson(){
-    this.FormChild?.onChangeForm();
+    this.FormChangeChild?.onChangeForm();
   }
 
 

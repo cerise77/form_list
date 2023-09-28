@@ -12,6 +12,7 @@ import {TitleService} from './service/http.service';
 import { FormChildComponent } from './form-child/form-child.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {UsersService} from './service/user.service';
+import { FormChangeChildComponent } from './form-change-child/form-change-child.component';
 
 const appRoutes: Routes =[
   { path: '', component: MainComponent},
@@ -23,7 +24,8 @@ const appRoutes: Routes =[
     AppComponent,
     MainComponent,
     FormChildComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FormChangeChildComponent
   ],
   providers: [TitleService, UsersService],
   imports: [

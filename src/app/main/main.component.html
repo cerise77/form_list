@@ -24,10 +24,12 @@
 
         <div>
             <!-- [(userName1)]="surname" -->
+            <app-form-change-child
+            [userName1]="surname"
+            ></app-form-change-child>
+
             <app-form-child
-            [(userName1)]="surname"
             (contentCreated)="onContentAdded($event)"
-            #form
             ></app-form-child>
         </div>
 

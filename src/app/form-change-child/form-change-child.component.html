@@ -1,4 +1,4 @@
-<div class="template_form" #form>
+<div class="template_form" #formChange>
     <div class="template_form_header">
         <div>
             <p class="template_form_name">Create new user</p>
@@ -8,7 +8,7 @@
     <form [formGroup]="myForm" novalidate>
         <div class="form-group">
             <label class="template_form_label">Username*</label>
-            <input class="form-control" name="name" formControlName="userName" #userName />
+            <input class="form-control" name="name" formControlName="userName" [ngModel]="userName1" (ngModelChange)="onNameChange($event)" #userName />
             <div class="alert alert-danger"
                 *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
                 No username provided
@@ -72,10 +72,15 @@
             </div>
         </div>
 
-        <div class="template_form_create">
+        <div class="template_form_change">
             <div>
-                <button class="btn btn-default" [disabled]="myForm.invalid" #buttonCreate (click)="onAddPage()">
-                    Create
+                <button class="btn btn-default btn1" [disabled]="myForm.invalid" (click)="onReset()" #buttonDelete>
+                    Delete
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-default" [disabled]="myForm.invalid" (click)="onSave()" #buttonSave>
+                    Save
                 </button>
             </div>
         </div>
