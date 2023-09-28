@@ -1,0 +1,41 @@
+<div class="template">
+    <div class="template_block">
+        <div>
+            <div class="template_block_button">
+                <button class="button" (click)="callForm()">Create User</button>
+            </div>
+            <div class="template_block_list">
+                <div class="template_block_list_header">
+                    <div>USERNAME</div>
+                    <div>FIRST NAME</div>
+                    <div>LAST NAME</div>
+                    <div>EMAIL</div>
+                    <div>TYPE</div>
+                </div>
+                <div class="template_block_list_body" *ngFor="let name of titles" (click)="callPerson()">
+                    <div>{{name.username}}{{surname}}</div>
+                    <div>{{name.firstname}}</div>
+                    <div>{{name.lasttname}}</div>
+                    <div>{{name.email}}</div>
+                    <div>{{name.typeuser}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!-- [(userName1)]="surname" -->
+            <app-form-child
+            [(userName1)]="surname"
+            (contentCreated)="onContentAdded($event)"
+            #form
+            ></app-form-child>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

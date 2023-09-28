@@ -1,0 +1,39 @@
+ [
+    {
+      "username": "Dot",
+      "firstname": "Ann",
+      "lasttname": "Low",
+      "email": "123@mail.com",
+      "typeuser": "Administrator"
+    },
+    {
+      "username": "Silvia",
+      "firstname": "Paul",
+      "lasttname": "Joli",
+      "email": "124@mail.com",
+      "typeuser": "Administrator"
+    },
+    {
+      "username": "Yellow",
+      "firstname": "Ellis",
+      "lasttname": "Bullock",
+      "email": "125@mail.com",
+      "typeuser": "Administrator"
+    },
+    {
+      "username": "Purple",
+      "firstname": "Sophie",
+      "lasttname": "Back",
+      "email": "126@mail.com",
+      "typeuser": "Administrator"
+    },
+    {
+      "username": "Pall",
+      "firstname": "Sandra",
+      "lasttname": "Jack",
+      "email": "126@mail.com",
+      "typeuser": "Administrator"
+    }
+  ]
+
+

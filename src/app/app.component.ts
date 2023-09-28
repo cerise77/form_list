@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    template: `<div>
+                    <nav>
+                        <a routerLink=""></a>
+                    </nav>
+                    <router-outlet></router-outlet>
+               </div>`
 })
 export class AppComponent {
-  title = 'testAngularClii';
 }

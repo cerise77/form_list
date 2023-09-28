@@ -1,0 +1,97 @@
+<div class="template_form" #form>
+    <div class="template_form_header">
+        <div>
+            <p class="template_form_name">Create new user</p>
+        </div>
+        <div class="template_form_close" (click)="onCloseForm()"></div>
+    </div>
+    <form [formGroup]="myForm" novalidate>
+        <div class="form-group">
+            <label class="template_form_label">Username*</label>
+            <input class="form-control" name="name" formControlName="userName" [ngModel]="userName1" (ngModelChange)="onNameChange($event)" #userName />
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+                No username provided
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="template_form_label">First name*</label>
+            <input class="form-control" name="name" formControlName="firstname"  #firstName />
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['firstname'].invalid && myForm.controls['firstname'].touched">
+                No first name provided
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="template_form_label">Last name*</label>
+            <input class="form-control" name="name" formControlName="lastname" #lastName />
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['lastname'].invalid && myForm.controls['lastname'].touched">
+                No last name provided
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="template_form_label">Email*</label>
+            <input class="form-control" name="email" formControlName="userEmail" #eMail/>
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
+                Wrong email
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="template_form_label">Type*</label>
+            <select class="form-control-dropdown" name="typeUser" formControlName="typeUser" #typeUser>
+            <option value="Administrator">Administrator</option>
+            <option value="Driver">Driver</option>
+            </select>
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['typeUser'].invalid && myForm.controls['typeUser'].touched">
+                Type isn't chosen
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="template_form_label">Password*</label>
+            <input class="form-control" name="password" formControlName="password">
+            <div class="alert alert-danger"
+                *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
+                    Min length 8. at least one number and one letter
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="template_form_label">Repeat password*</label>
+            <input type="password" class="form-control" name="confirmPassword" formControlName="confirmPassword">
+            <div class="alert alert-danger" 
+                *ngIf="myForm.controls['password'].valid && myForm.controls['confirmPassword'].dirty && (myForm.controls['password'].value !== myForm.controls['confirmPassword'].value)">
+                Password doesn't match
+            </div>
+        </div>
+
+        <div class="template_form_create">
+            <div>
+                <button class="btn btn-default" [disabled]="myForm.invalid" #buttonCreate (click)="onAddPage()">
+                    Create
+                </button>
+            </div>
+        </div>
+
+        <div class="template_form_change">
+            <div>
+                <button class="btn btn-default btn1" [disabled]="myForm.invalid" (click)="onReset()" #buttonDelete>
+                    Delete
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-default" [disabled]="myForm.invalid" (click)="onSave()" #buttonSave>
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
