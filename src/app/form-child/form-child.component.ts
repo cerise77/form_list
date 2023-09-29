@@ -24,15 +24,17 @@ submitted: boolean = false;
 @ViewChild('eMail', { static: false }) eMail!: ElementRef;
 @ViewChild('typeUser', { static: false }) typeUser!: ElementRef;
 
+// @ViewChild('templateMessage', { static: false }) messageSucces!: ElementRef;
 
-constructor(private renderer: Renderer2, private userService: UsersService) {    
+
+constructor(private renderer: Renderer2, private el: ElementRef, private userService: UsersService) {    
   this.myForm = new FormGroup({       
     "userName": new FormControl("", Validators.required),
     "firstname": new FormControl("", Validators.required),
     "lastname": new FormControl("", Validators.required),
     "userEmail": new FormControl("", [Validators.required, Validators.email]),
     "typeUser": new FormControl("", Validators.required),
-    "password": new FormControl("", [Validators.required, Validators.pattern("^[A-Za-z]{8,}$")]),
+    "password": new FormControl("", [Validators.required, Validators.pattern(/^(?=.*?[a-z])(?=.*?[0-9]){8,}/)]),
     "confirmPassword": new FormControl("", [Validators.required]),
 },
     {
@@ -54,6 +56,18 @@ onAddPage() {
     emailInput: this.eMail.nativeElement.value,
     typeInput: this.typeUser.nativeElement.value
   });
+
+  // if(this.myForm.valid){
+  //   // this.messageSucces.nativeElement.style.display = "block";
+  //   const div = this.renderer.createElement('div');
+  //   // this.renderer.addClass(div, 'message_succes');
+  //   this.renderer.setStyle(div,'background-color','#f44682');
+  //   this.renderer.setProperty(div,'innerHTML',"Your request was successful");
+  //   this.renderer.appendChild(this.messageSucces, div);
+  //   console.log('1111');
+  // } else if(this.myForm.invalid) {
+  //   // this.messageError.nativeElement.style.display = "block";
+  // }
 }
 
 

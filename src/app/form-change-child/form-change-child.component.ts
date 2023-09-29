@@ -14,6 +14,8 @@ export class FormChangeChildComponent implements OnInit {
   myForm : FormGroup;
   submitted: boolean = false;
   
+  // user:DataTitles[] = [];
+  // newUser:DataTitles[] = [];
   
    
   @ViewChild('formChange', { static: false }) formChange!: ElementRef;
@@ -28,7 +30,6 @@ export class FormChangeChildComponent implements OnInit {
   onNameChange(model: string){
     this.userNameInput = model;
     this.userNameChange.emit(model);
-
   }
 
   @Input() firstnameInput:string = "";
@@ -52,6 +53,7 @@ export class FormChangeChildComponent implements OnInit {
     this.emailChange.emit(model);
   }
 
+
     
   constructor(private renderer: Renderer2, private userService: UsersService) {    
     this.myForm = new FormGroup({       
@@ -60,16 +62,17 @@ export class FormChangeChildComponent implements OnInit {
       "lastname": new FormControl("", Validators.required),
       "userEmail": new FormControl("", [Validators.required, Validators.email]),
       "typeUser": new FormControl("", Validators.required),
-      "password": new FormControl("", [Validators.required, Validators.pattern("^[A-Za-z]{8,}$")]),
+      "password": new FormControl("", [Validators.required, Validators.pattern(/^(?=.*?[a-z])(?=.*?[0-9]){8,}/)]),
       "confirmPassword": new FormControl("", [Validators.required]),
   },
       {
         validators: [ConfirmPasswordValidator('password', 'confirmPassword')],
       }); }
   
-  
-  ngOnInit(): void {
 
+      
+  ngOnInit(): void {
+    // this.userService.userData.subscribe((user: DataTitles[]) => {this.user = user;});
   }
   
   

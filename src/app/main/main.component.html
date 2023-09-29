@@ -1,4 +1,8 @@
 <div class="template">
+    <!-- <div class="template_message">
+        <div class="template_message_error" #messageError>An error has occurred</div>
+        <div class="template_message_succes" #messageSucces>Your request was successful</div>
+    </div> -->
     <div class="template_block">
         <div>
             <div class="template_block_button">
@@ -12,7 +16,7 @@
                     <div>EMAIL</div>
                     <div>TYPE</div>
                 </div>
-                <div class="template_block_list_body" *ngFor="let name of titles" (click)="callPerson()">
+                <div class="template_block_list_body" *ngFor="let name of titles" (click)="callPerson($event)">
                     <div>{{name.username}}</div>
                     <div>{{name.firstname}}</div>
                     <div>{{name.lasttname}}</div>

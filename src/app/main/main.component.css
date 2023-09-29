@@ -4,7 +4,7 @@
 }
 
 .template_block {
-    padding: 40px 20px;
+    padding: 100px 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
@@ -64,4 +64,35 @@
     border: 0;
     border-radius: 5px;
     cursor: pointer;
+}
+
+
+.template_message {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    position: relative;
+    top: 40px;
+    right: 20px;
+}
+
+.template_message div {
+    padding: 10px 20px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+.template_message .template_message_error {
+    position: absolute;
+    left: 40px;
+    display: none;
+    background-color: #f44682;
+}
+
+.template_message .template_message_succes {
+    position: absolute;
+    right: 0;
+    display: none;
+    background-color: #66bb6a;
 }
