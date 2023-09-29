@@ -24,9 +24,6 @@ submitted: boolean = false;
 @ViewChild('eMail', { static: false }) eMail!: ElementRef;
 @ViewChild('typeUser', { static: false }) typeUser!: ElementRef;
 
-@ViewChild('buttonCreate', { static: false }) buttonCreate!: ElementRef;
-
-
 
 constructor(private renderer: Renderer2, private userService: UsersService) {    
   this.myForm = new FormGroup({       

@@ -56,7 +56,7 @@
 
         <div class="form-group">
             <label class="template_form_label">Password*</label>
-            <input class="form-control" name="password" formControlName="password">
+            <input type="password" class="form-control" name="password" formControlName="password">
             <div class="alert alert-danger"
                 *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
                     Min length 8. at least one number and one letter

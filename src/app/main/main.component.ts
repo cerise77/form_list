@@ -16,9 +16,6 @@ export class  MainComponent implements OnInit {
 
   titles: DataTitles[] = [];
 
-  surname: string = "aaaa";
-
-
   @ViewChild(FormChildComponent, {static: false}) private FormChild: FormChildComponent|undefined;
   @ViewChild(FormChangeChildComponent, {static: false}) private FormChangeChild: FormChangeChildComponent|undefined;
 

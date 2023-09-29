@@ -8,7 +8,7 @@
     <form [formGroup]="myForm" novalidate>
         <div class="form-group">
             <label class="template_form_label">Username*</label>
-            <input class="form-control" name="name" formControlName="userName" [ngModel]="userName1" (ngModelChange)="onNameChange($event)" #userName />
+            <input class="form-control" name="name" formControlName="userName" [ngModel]="userNameInput" (ngModelChange)="onNameChange($event)" #userName />
             <div class="alert alert-danger"
                 *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
                 No username provided
@@ -17,7 +17,7 @@
 
         <div class="form-group">
             <label class="template_form_label">First name*</label>
-            <input class="form-control" name="name" formControlName="firstname"  #firstName />
+            <input class="form-control" name="name" formControlName="firstname" [ngModel]="firstnameInput" (ngModelChange)="onFirstNameChange($event)" #firstName />
             <div class="alert alert-danger"
                 *ngIf="myForm.controls['firstname'].invalid && myForm.controls['firstname'].touched">
                 No first name provided
@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <label class="template_form_label">Last name*</label>
-            <input class="form-control" name="name" formControlName="lastname" #lastName />
+            <input class="form-control" name="name" formControlName="lastname" [ngModel]="lastnameInput" (ngModelChange)="onLastNameChange($event)" #lastName />
             <div class="alert alert-danger"
                 *ngIf="myForm.controls['lastname'].invalid && myForm.controls['lastname'].touched">
                 No last name provided
@@ -35,7 +35,7 @@
 
         <div class="form-group">
             <label class="template_form_label">Email*</label>
-            <input class="form-control" name="email" formControlName="userEmail" #eMail/>
+            <input class="form-control" name="email" [ngModel]="emailInput" (ngModelChange)="onEmailChange($event)" formControlName="userEmail" #eMail/>
             <div class="alert alert-danger"
                 *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
                 Wrong email
@@ -56,7 +56,7 @@
 
         <div class="form-group">
             <label class="template_form_label">Password*</label>
-            <input class="form-control" name="password" formControlName="password">
+            <input class="form-control" name="password" type="password" formControlName="password">
             <div class="alert alert-danger"
                 *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
                     Min length 8. at least one number and one letter

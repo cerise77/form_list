@@ -13,7 +13,7 @@
                     <div>TYPE</div>
                 </div>
                 <div class="template_block_list_body" *ngFor="let name of titles" (click)="callPerson()">
-                    <div>{{name.username}}{{surname}}</div>
+                    <div>{{name.username}}</div>
                     <div>{{name.firstname}}</div>
                     <div>{{name.lasttname}}</div>
                     <div>{{name.email}}</div>
@@ -23,13 +23,16 @@
         </div>
 
         <div>
-            <!-- [(userName1)]="surname" -->
             <app-form-change-child
-            [userName1]="surname"
+                *ngFor="let name of titles"
+                [userNameInput]="name.username"
+                [firstnameInput]="name.firstname"
+                [lastnameInput]="name.lasttname"
+                [emailInput]="name.email"
             ></app-form-change-child>
 
             <app-form-child
-            (contentCreated)="onContentAdded($event)"
+                (contentCreated)="onContentAdded($event)"
             ></app-form-child>
         </div>
 

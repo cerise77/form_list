@@ -25,15 +25,38 @@ export class FormChangeChildComponent implements OnInit {
   @ViewChild('eMail', { static: false }) eMail!: ElementRef;
   @ViewChild('typeUser', { static: false }) typeUser!: ElementRef;
   
-  @Input() userName1:string = "";
+  @Input() userNameInput:string = "";
   @Output() userNameChange = new EventEmitter<string>();
+  onNameChange(model: string){
+    this.userNameInput = model;
+    this.userNameChange.emit(model);
+
+  }
+
+  @Input() firstnameInput:string = "";
+  @Output() firstNameChange = new EventEmitter<string>();
+  onFirstNameChange(model: string){
+    this.firstnameInput = model;
+    this.firstNameChange.emit(model);
+  }
+
+  @Input() lastnameInput:string = "";
+  @Output() lastNameChange = new EventEmitter<string>();
+  onLastNameChange(model: string){
+    this.lastnameInput = model;
+    this.lastNameChange.emit(model);
+  }
+
+  @Input() emailInput:string = "";
+  @Output() emailChange = new EventEmitter<string>();
+  onEmailChange(model: string){
+    this.emailInput = model;
+    this.emailChange.emit(model);
+  }
+
   // @Input() userName1:DataTitles[] = [];
   // @Output() userNameChange = new EventEmitter<{usernameInput: string, firstnameInput: string, lastnameInput: string, emailInput: string, typeInput: boolean}>();
-  onNameChange(model: string){
-       
-      this.userName1 = model;
-      this.userNameChange.emit(model);
-  }
+
   
   constructor(private renderer: Renderer2, private userService: UsersService) {    
     this.myForm = new FormGroup({       
@@ -58,7 +81,6 @@ export class FormChangeChildComponent implements OnInit {
   onCloseForm(){
     this.formChange.nativeElement.style.display = "none";
     this.submitted = false;
-    this.myForm.reset();
   }
   
   
