@@ -14,8 +14,6 @@ export class FormChangeChildComponent implements OnInit {
   myForm : FormGroup;
   submitted: boolean = false;
   
-  // user:DataTitles[] = [];
-  // newUser:DataTitles[] = [];
   
    
   @ViewChild('formChange', { static: false }) formChange!: ElementRef;
@@ -54,10 +52,7 @@ export class FormChangeChildComponent implements OnInit {
     this.emailChange.emit(model);
   }
 
-  // @Input() userName1:DataTitles[] = [];
-  // @Output() userNameChange = new EventEmitter<{usernameInput: string, firstnameInput: string, lastnameInput: string, emailInput: string, typeInput: boolean}>();
-
-  
+    
   constructor(private renderer: Renderer2, private userService: UsersService) {    
     this.myForm = new FormGroup({       
       "userName": new FormControl("", Validators.required),
@@ -74,7 +69,7 @@ export class FormChangeChildComponent implements OnInit {
   
   
   ngOnInit(): void {
-    // this.userService.userData.subscribe((user: DataTitles[]) => {this.user = user;});
+
   }
   
   
