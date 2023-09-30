@@ -19,9 +19,6 @@ export class  MainComponent implements OnInit {
   @ViewChild(FormChildComponent, {static: false}) private FormChild: FormChildComponent|undefined;
   @ViewChild(FormChangeChildComponent, {static: false}) private FormChangeChild: FormChangeChildComponent|undefined;
 
-  // @ViewChild('messageError', { static: false }) messageError!: ElementRef;
-  // @ViewChild('messageSucces', { static: false }) messageSucces!: ElementRef;
-
   
   constructor(private httpService: TitleService) {}
 
@@ -41,7 +38,6 @@ export class  MainComponent implements OnInit {
 
   callPerson(model:any){
     this.FormChangeChild?.onChangeForm();
-    // console.log(model.target.firstChild.innerText);
   }
 
 
@@ -54,11 +50,7 @@ export class  MainComponent implements OnInit {
       typeuser: contentData.typeInput
     });
 
-    // if(this.FormChild?.myForm.valid){
-    //   this.messageSucces.nativeElement.style.display = "block";
-    // } else if(this.FormChild?.myForm.invalid) {
-    //   this.messageError.nativeElement.style.display = "block";
-    // }
+
   }
 
 

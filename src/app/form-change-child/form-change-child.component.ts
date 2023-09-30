@@ -14,9 +14,6 @@ export class FormChangeChildComponent implements OnInit {
   myForm : FormGroup;
   submitted: boolean = false;
   
-  // user:DataTitles[] = [];
-  // newUser:DataTitles[] = [];
-  
    
   @ViewChild('formChange', { static: false }) formChange!: ElementRef;
   @ViewChild('userName', { static: false }) userName!: ElementRef;
@@ -72,7 +69,7 @@ export class FormChangeChildComponent implements OnInit {
 
       
   ngOnInit(): void {
-    // this.userService.userData.subscribe((user: DataTitles[]) => {this.user = user;});
+
   }
   
   
@@ -85,11 +82,12 @@ export class FormChangeChildComponent implements OnInit {
   onReset(){
     this.submitted = false;
     this.myForm.reset();
+
   }
   
   
   onSave(){
-  
+
   }
   
   

@@ -57,17 +57,6 @@ onAddPage() {
     typeInput: this.typeUser.nativeElement.value
   });
 
-  // if(this.myForm.valid){
-  //   // this.messageSucces.nativeElement.style.display = "block";
-  //   const div = this.renderer.createElement('div');
-  //   // this.renderer.addClass(div, 'message_succes');
-  //   this.renderer.setStyle(div,'background-color','#f44682');
-  //   this.renderer.setProperty(div,'innerHTML',"Your request was successful");
-  //   this.renderer.appendChild(this.messageSucces, div);
-  //   console.log('1111');
-  // } else if(this.myForm.invalid) {
-  //   // this.messageError.nativeElement.style.display = "block";
-  // }
 }
 
 

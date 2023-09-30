@@ -74,12 +74,12 @@
 
         <div class="template_form_change">
             <div>
-                <button class="btn btn-default btn1" [disabled]="myForm.invalid" (click)="onReset()" #buttonDelete>
+                <button class="btn btn-default btn1" [disabled]="myForm.valid" (click)="onReset()" #buttonDelete>
                     Delete
                 </button>
             </div>
             <div>
-                <button class="btn btn-default" [disabled]="myForm.invalid" (click)="onSave()" #buttonSave>
+                <button class="btn btn-default" [disabled]="myForm.valid" (click)="onSave()" #buttonSave>
                     Save
                 </button>
             </div>
